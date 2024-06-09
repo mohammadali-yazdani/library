@@ -7,5 +7,6 @@ export default {
       sans: ["Noto Sans Arabic", "sans-serif"],
     },
   },
+  darkMode: "class",
   plugins: [],
 };
