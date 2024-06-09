@@ -1,0 +1,11 @@
+.books {
+  @apply flex gap-4 pt-10 flex-wrap md:flex-nowrap;
+
+  .book-list {
+    @apply w-full md:flex-[2];
+  }
+
+  .favorites {
+    @apply w-full md:flex-[1];
+  }
+}
