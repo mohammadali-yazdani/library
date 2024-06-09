@@ -1,0 +1,35 @@
+.main-header {
+  @apply bg-white border-gray-200 lg:px-6 py-2.5 dark:bg-gray-800 shadow-sm;
+  &-nav {
+    @apply container max-w-4xl px-4 mx-auto;
+
+    &--inner {
+      @apply flex flex-wrap justify-between items-center;
+      &--right {
+        @apply flex items-center;
+        &__logo {
+          @apply ml-3 h-6 sm:h-9 dark:text-white;
+        }
+        &__name {
+          @apply self-center text-xl font-semibold whitespace-nowrap dark:text-white;
+        }
+      }
+
+      &--left {
+        @apply flex items-center lg:order-2;
+        & > button {
+          @apply text-gray-700 bg-transparent hover:bg-gray-300 focus:outline-none font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center ms-2 dark:text-gray-400 dark:hover:bg-gray-700;
+          .button-icon {
+            @apply w-5 h-5;
+          }
+        }
+      }
+    }
+  }
+
+  &--right {
+    h2 {
+      @apply text-2xl font-bold;
+    }
+  }
+}
