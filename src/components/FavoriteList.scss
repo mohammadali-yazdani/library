@@ -1,0 +1,9 @@
+.favorites {
+  @apply bg-purple-900 text-white rounded-lg p-4 h-fit;
+  &-title {
+    @apply text-lg font-bold mb-3;
+  }
+  &-list {
+    @apply flex flex-col gap-4;
+  }
+}
