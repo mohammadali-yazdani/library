@@ -1,10 +1,20 @@
-import "./SearchBar.scss";
-
 import { Search } from "react-feather";
 
-export const SearchBar = () => {
+import "./SearchBar.scss";
+
+export const SearchBar = ({
+  searchTerm,
+  setSearchTerm,
+  hasSearch,
+  onReset,
+  onSearch,
+}) => {
+  const searchChangeHandler = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
-    <div className="search-bar">
+    <form className="search-bar">
       <label htmlFor="library-search" className="search-bar-label">
         جستجو
       </label>
@@ -17,12 +27,29 @@ export const SearchBar = () => {
           id="library-search"
           className="search-bar-box--input"
           placeholder="جستجوی کتاب..."
+          value={searchTerm}
+          onChange={searchChangeHandler}
           required
         />
-        <button type="submit" className="search-bar-box--button">
-          جستجو
-        </button>
+        <div className="search-bar-box--buttons">
+          {hasSearch && (
+            <button
+              type="button"
+              className="search-bar-box--buttons--cancel"
+              onClick={onReset}
+            >
+              لغو جستجو
+            </button>
+          )}
+          <button
+            type="submit"
+            className="search-bar-box--buttons--submit"
+            onClick={onSearch}
+          >
+            جستجو
+          </button>
+        </div>
       </div>
-    </div>
+    </form>
   );
 };
